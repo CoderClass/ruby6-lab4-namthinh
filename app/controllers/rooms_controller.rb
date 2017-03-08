@@ -1,6 +1,7 @@
 class RoomsController < ApplicationController
   def index
     @rooms = Room.all
+		@room = Room.new
   end
 
   def create
@@ -8,7 +9,8 @@ class RoomsController < ApplicationController
     if @room.save
       redirect_to root_path
     else
-      render 'new'
+			flash[:error] = @room.errors.full_messages.to_sentence
+      redirect_to root_path
     end
   end
 
