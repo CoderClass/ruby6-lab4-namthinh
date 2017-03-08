@@ -1,0 +1,12 @@
+<%= form_for @message do |f| %>
+    <div class="form-group">
+      <% if @message.errors.size > 0 %>
+          <div class="alert alert-danger fade show"><%= @message.errors.full_messages.to_sentence %> </div>
+      <% end %>
+      <div class="form-control">
+        <%= f.text_field :content%>
+        <%= f.text_field :username%>
+        <%=  f.submit %>
+      </div>
+    </div>
+<% end %>

@@ -1,0 +1,10 @@
+<h1>Welcome</h1>
+<% @messages.each do |m| %>
+    <div class="form-group">
+      <%= m.username %>
+      <%= m.content %>
+    </div>
+    <%= render 'messages/form' %>
+<%end%>
+
+
